@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesanan</title>
+    <style type="text/css">
+        body {
+            background-color: gray;
+        }
+        h1 {
+            font-size: 50px;
+            font-family:'Times New Roman', Times, serif;
+            color:whitesmoke;
+        }
+        </style>
+</head>
+<body>
+
+    <div id="header" style="text-align: center; background-image: url('src/hd.jpg');background-repeat: no-repeat
+    ;background-size: cover; padding: 150px; color: whitesmoke;">
+        <h1>Eat and Drink</h1>
+    </div>
+    <div id="order" style="color: whitesmoke">
+      
+    <h1>Order</h1>  
+    <form action="/home">
+        <label for="Nama Pemesan">Nama Pemesan</label>
+        <input type="text" id="name" name="name" onKeyPress="return maxlength(event)" placeholder="Nama Pelanggan" required>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <br><br>    
+        <label for="">Paket Pesanan</label>
+        <br><br>    
+        <label for="">Paket A</label>
+        <input type="checkbox">
+        
+        <label for="">Paket B</label>
+        <input type="checkbox">
+        <label for="">Paket C</label>
+        <input type="checkbox">
+        <br><br>
+        <label for="">Tipe Pesanan</label>
+        <br><br>
+        <label for="">Take Away</label>
+        <input type="radio" name="tipe_pesanan">
+        <label for="">Dine IN</label>
+        <input type="radio" name="tipe_pesanan">
+        
+        <br><br>
+        <label for="">Pesan buat waiter</label><br><br>
+        <textarea  cols="100" rows="10"></textarea>
+        <br><br>
+
+        <br><br>
+        <label for="">Anter Kemana -</label>
+        <select name="Anter" id="Anter" required>
+            <option value="0">Kota</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Depok">Depok</option>
+            <option value="Tanggerang">Tanggerang</option>
+            <option value="Bogor">Bogor</option>
+            <option value="Bekasi">Bekasi</option>
+        </select>
+        <br><br>
+        <label for="">Pesan buat waiter -</label>
+        <input type="text" id="jmlpsn" name="jmlpsn" placeholder="Jumlah Pesanan" onKeyUp="angka(this)" maxlength="2" required>
+        <br><br>
+        
+    <label for="">Tipe Pembayaran </label>
+    <br><br>
+    <label for="">COD</label>
+    <input type="radio" name="tipe_pesanan">
+    <label for="">ATM</label>
+    <input type="radio" name="tipe_pesanan">
+    <label for="">Dana</label>
+    <input type="radio" name="tipe_pesanan">
+    <label for="">Ovo</label>
+    <input type="radio" name="tipe_pesanan">
+    <label for="">Gopay</label>
+    <input type="radio" name="tipe_pesanan">
+    <label for="">Buka Dompet</label>
+    <input type="radio" name="tipe_pesanan">
+    <br><br>
+
+    <label for="">Pengantar -</label>
+    <select name="Pengantar" id="Pengantar" required>
+        <option value="0">Kurir</option>
+        <option value="Gojek">Gojek</option>
+        <option value="Grab">Grab</option>
+        <option value="JNE">JNE</option>
+        <option value="JNT">JNT</option>
+        <option value="Wahana">Wahana</option>
+    </select>
+
+        <br><br>
+        <label for="">Tanggal pesanan</label>
+        <input type="date">
+        <br><br>
+        <label for="">Jam di Terima -</label>
+        <input type="time" id="jam" name="jam" required>
+        <br><br>
+        <label for="">File Pesanan</label>
+        <br>
+        <input type="file">
+        <br><br>
+        <input type="submit" onClick="return validasi()" value="Pesan Sekarang">
+        <br><br>
+    </form>
+    </div>
+    <div id="chatbox"></div>
+            </center>
+            <script>
+                function maxlength(evt) {
+                    var panjangnama = document.getElementById("name").value;
+                    if (panjangnama.length >= 30  ){
+                        window.alert("Max Length 30");
+                        return false;
+                    }
+                }
+                function angka(e) {
+                    var max = document.getElementById("jmlpsn").value;
+                    if (!/^[0-9]+$/.test(e.value)) {
+                        window.alert("Hanya Boleh Angka");
+                        e.value = e.value.substring(0,e.value.length-1);
+                        max.length = 2;
+                    }
+                }
+                function validasi() {
+                    var nama = document.getElementById("name").value;
+                    var email = document.getElementById("email").value;
+                    var jam = document.getElementById("jam").value;
+                    var Anter = document.getElementById("Anter").value;
+                    var jmlpsn = document.getElementById("jmlpsn").value;
+                    var Pengantar = document.getElementById("Pengantar").value;
+                    if (nama && email && jam  && kota  && pesanan && Pengantar ) {
+                        document.getElementById("chatbox").innerHTML= "Nama : " + nama + "<br>" + "Email : " + email + "<br>" + "Jam Pesanan : " + jam + "<br>" + "Anter : " + kota + "<br>" + "Jumlah Pesanan : " + pesanan + "<br>" + "Pengantar : " + Pengantar + "<br><br>" + "Selamat Menunggu Pesanan";
+                        return false;
+                    }else{
+                        alert("Data Belum Lengkap, Harap Isi dengan Benar");
+                    }
+                }
+                function submit() {
+                    var yakin = confirm("Apakah Kamu Yakin Ingin Keluar?");
+                    if (yakin) {
+                        document.write("Anda Berhasil Keluar");
+                        window.location = "index.html";
+                    } else {
+                        document.write("Baiklah, Stay Here Please :)");
+                        window.location = "home.html"
+                    }
+                }
+            </script>
+        </body>
+        </html>

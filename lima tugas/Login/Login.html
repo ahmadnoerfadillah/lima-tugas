@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Home Login</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="JS/function.js"></script>
+		<script src="JS/logout.js"></script>
+	</head>
+
+	<body>
+		<div class="kerangka">
+			<div class="header">
+				<h2 class="home">WELCOME</h2>
+			</div>
+			<br>
+			<div class="gambar">
+				<center><img src="src/a12.jpg" align="center" border="5" width="300" heigth="400"></center>
+			</div>
+			<br>
+			<h3 style="text-align: center; ">0110120118_Ahmad Asep Nurfadillah_SI4</h3>
+			<div class="form">
+				<form method="request">
+					<input type="submit" class="tombol_login" onClick="return logout()" value="LOGOUT">
+				</form>
+			</div>
+			<script>
+				// JavaScript Documen
+				function logout() {
+					var yakin = confirm("Apakah Kamu Yakin Ingin Keluar?");
+					if (yakin) {
+						document.write("Anda Berhasil Keluar");
+						window.location = "Login2.html";
+					} else {
+						document.write("Baiklah, tetap didekatku yak :)");
+						window.location = "Login.html"
+					}
+				}
+			</script>
+			
+		</div>
+	</body>
+</html>

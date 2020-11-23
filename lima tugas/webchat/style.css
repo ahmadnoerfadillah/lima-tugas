@@ -1,0 +1,95 @@
+@keyframes slide_grey
+{
+  from 
+  {
+    margin-left:65%;
+    background-color:#c0c0c0;
+  }
+  to
+  {
+     margin-left:25% 
+  }
+}
+
+@keyframes slide_green
+{
+  from 
+  {
+    margin-left:65%;
+    background-color:#c0c0c0;
+  }
+  to
+  {
+     margin-left:0% 
+  }
+}
+
+body{
+     background: blue; 
+     
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: purple;
+  outline: 1px solid slategrey;
+}
+
+
+
+
+#send
+{
+    margin-left:80%;
+  
+}
+
+#write
+{
+    width:90%;
+    margin-left:3.5%;
+    margin-top:3.5%;
+    margin-bottom:3.5%;
+    border-radius:1em;
+  
+}
+
+#box_one
+{
+    width:55%;
+    text-align:center;
+      background-color: #00f24c ;
+    border-radius:.7em;
+    padding:1px;
+    color:white;
+}
+
+.greenbox
+{
+    width:60%;
+      background-color: #00f24c;
+    
+    border-radius:.7em;
+    padding:5px;
+    margin-top:8px;
+    color:white;
+}
+
+.greybox
+{
+    width:60%;
+    margin-left:25%;
+    margin-top:8px;
+    background-color:#e8e8e8;
+    
+     border-radius:5em;
+    padding:5px;
+    color:white;
+}

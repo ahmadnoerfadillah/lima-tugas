@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<center>
+		<title>Kurs</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="JS/function.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<!-- Header Form -->
+			<div>
+  				<div >
+    				<h2>Kurs Mata uang Dunia</h2>
+    				<h2>Fadillah212</h2>
+  				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<center>
+			<!-- Form Kurs -->
+				<input onkeyup="kurs()" type="text" id="nilai" name="nilai" placeholder="Nilai ">
+ 					<center>
+					 <br>
+							<select onchange="kurs()" name="kurs" id="kurs">
+								<option value="0">Mata uang</option>
+								<option value="1">Dollar</option>
+								<option value="2">Riyal</option>
+								<option value="3">Ringgit</option>
+								<option value="4">Poundsterling</option>
+								<option value="5">Yen</option>
+								<option value="6">Won</option>
+								<option value="7">Euro</option>
+						</select>
+					<center>
+					<br>
+				<input type="text" disabled="" id="rupiah" name="rupiah" placeholder="Hasil">
+
+				<script>
+					function kurs(){
+						var k = document.getElementById("kurs").value;
+						if (k == 1){
+							var input = document.getElementById("nilai").value;
+							var nilai = 15000;
+							var hitung = nilai * input;
+							document.getElementById("rupiah").value = "Rp. " + hitung;
+						}
+						else if (k == 2){
+							var input2 = document.getElementById("nilai").value;
+							var nilai2 = 56000;
+							var hitung2 = nilai2 * input2;
+							document.getElementById("rupiah").value = "Rp. " + hitung2;
+						}
+						else if (k == 3){
+							var input3 = document.getElementById("nilai").value;
+							var nilai3 = 4000;
+							var hitung3 = nilai3 * input3;
+							document.getElementById("rupiah").value = "Rp. " + hitung3;
+						}
+						else if (k == 4){
+							var input4 = document.getElementById("nilai").value;
+							var nilai4 = 19000;
+							var hitung4 = nilai4 * input4;
+							document.getElementById("rupiah").value = "Rp. " + hitung4;
+						}
+						else if (k == 5){
+							var input5 = document.getElementById("nilai").value;
+							var nilai5 = 14000;
+							var hitung5 = nilai5 * input5;
+							document.getElementById("rupiah").value = "Rp. " + hitung5;
+						}
+						else if (k == 6){
+							var input6 = document.getElementById("nilai").value;
+							var nilai6 = 12000;
+							var hitung6 = nilai6 * input6;
+							document.getElementById("rupiah").value = "Rp. " + hitung6;
+						}
+						else if (k == 7){
+							var input7 = document.getElementById("nilai").value;
+							var nilai7 = 16000;
+							var hitung7 = nilai7 * input7;
+							document.getElementById("rupiah").value = "Rp. " + hitung7;
+						}
+						else if (k < 1){
+							document.getElementById("rupiah").value = "0";
+						}
+					}
+				</script>
+	
+		</div>
+	</body>
+</html>

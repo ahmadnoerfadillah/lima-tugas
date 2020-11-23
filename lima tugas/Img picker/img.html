@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pengambilan Gambar</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="JS/imgpic.js"></script>
+	</head>
+	<body>
+		<div id="header" style="text-align: center; background-image: url('src/a12.jpg');background-repeat: no-repeat
+    ;background-size: cover; padding: 150px; color: whitesmoke;">
+</div>
+	<center>
+		<div>
+			<!-- Header Form -->
+			<div >
+  				<div>
+    				<h2 align="center">Pilihan Foto</h2>
+    				<div></div>
+  				</div>
+			</div>
+			<br>
+			<br>
+			<!-- Form Kurs -->
+					<center>
+						<form id="form1">
+							<select onChange="return pilih()" name="pic" id="pic" >
+								<option value="0">Choice Your Photo</option>
+								<option value="1">Selfie</option>
+								<option value="2">Empat Sekawan</option>
+								<option value="3">Bunga Banyak</option>
+								<option value="4">Bunga Satu</option>
+								<option value="5">Cafe</option>
+								<option value="6">Free Time</option>
+								<option value="7">Coffe Latte</option>
+							</select>
+						</form>
+					</center>
+					<br>
+					<center><div id="img"></div></center>
+					<script>
+						function pilih(){
+							var pil=document.getElementById("form1").pic.value;
+							if (pil=="1")
+							{
+								document.getElementById("img").innerHTML="<img src='src/a12.jpg'>";
+								window.alert("Ini adalah foto selfie di gunung a12.jpg");
+							}
+							else if (pil=="2")
+							{
+								document.getElementById("img").innerHTML="<img src='src/bc1.jpg'>";
+								window.alert("Ini adalah foto dari empat sekawan bc1.jpg");
+							}
+							else if (pil=="3")
+    						{
+        						document.getElementById("img").innerHTML="<img src='src/bunga1.jpeg'>";
+								window.alert("Ini adalah foto dari bunga banyak bunga1.jpeg");
+    						}
+							else if (pil=="4")
+    						{
+        						document.getElementById("img").innerHTML="<img src='src/bunga2.jpeg'>";
+								window.alert("Ini adalah foto dari bunga satu bunga2.jpeg");
+    						}
+							else if (pil=="5")
+    						{
+        						document.getElementById("img").innerHTML="<img src='src/cafe.jpg'>";
+								window.alert("Ini adalah foto dari cafe cafe.jpg");
+    						}
+							else if (pil=="6")
+    						{
+        						document.getElementById("img").innerHTML="<img src='src/hd.jpg'>";
+								window.alert("Ini adalah foto dari free time hd.jpg");
+    						}
+							else if (pil=="7")
+    						{
+        						document.getElementById("img").innerHTML="<img src='src/img2.jpg'>";
+								window.alert("Ini adalah foto dari coffe latte img2.jpg");
+    						}else{
+								document.getElementById("img").innerHTML="<img src='IMG/Pilih.jpg'>";
+							}
+						}
+					</script>
+		</div>
+	</body>
+</html>

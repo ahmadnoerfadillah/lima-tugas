@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Chat Ahmad</title>
+         <link rel="stylesheet" type="text/css" href="style.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+       </head>
+       <body>
+        
+     <br>
+       <div id="box_one">
+       
+       <h3>Silahkan Mencoba Chat</h3>>>>
+       </div> 
+     
+       <div id="new_box">
+       </div>
+       
+    <div id="Kirim Pesan">
+      <form name="form" id="form" novalidate> 
+         <input  autocomplete='off' class='form-control' type="text" id="write" placeholder="Kirim Pesan">
+         <input type="submit" id="send" class='btn btn-success' value="Kirim"/>
+       
+      </form>
+    </div>
+    <script>
+      window.onload = function()
+      {       
+        var write =  
+        document.getElementById("write");
+        var send = document.getElementById("send");
+        var count = 0;
+        write.onfocus = function del()
+        {
+          write.value = "";
+        }
+        send.onclick = function addText()
+        {
+          if(count%2==0)
+          {
+            var txt = document.forms["form"].elements["write"].value;
+            var p = document.createElement("p");
+            var add = document.createTextNode(txt);
+            var newbox = document.createElement("div");
+            newbox.className = "greybox";
+            newbox.style.animationName = "slide_grey";
+            newbox.style.animationDuration = "1s"
+            newbox.style.animationIterationCount = "1"
+            newbox.style.animationTimingFunction = "ease-out"
+            p.appendChild(add); 
+            newbox.appendChild(p);
+            document.getElementById('new_box').appendChild(newbox);
+            count++;
+            write.value = ""; 
+            return false;
+        }
+        else
+        {
+            var txt = document.forms["form"].elements["write"].value;
+            var p = document.createElement("p");
+            var add = document.createTextNode(txt);
+            var newbox = document.createElement("div");
+            newbox.className = "greenbox";
+            newbox.style.animationName = "slide_green";
+            newbox.style.animationDuration = "1s"
+            newbox.style.animationIterationCount = "1"
+            newbox.style.animationTimingFunction = "ease-out"
+            p.appendChild(add);  
+            newbox.appendChild(p);
+            document.getElementById('new_box').appendChild(newbox); 
+            count++;
+            write.value = ""; 
+            return false; 
+          }
+        } 
+      }
+    </script>
+ 
+    </body>
+</html>

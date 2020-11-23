@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="JS/otentikasi.js"></script>
+	</head>
+
+	<body bgcolor= "red">
+		<div class="kerangka">
+			<div class="header">
+				<h2>LOGIN</h2>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="form">
+				<form method="request">
+					<input type="text" placeholder="Pengguna" class="form_login" name="username" id="username" required />
+					<input type="password" placeholder="Sandi" class="form_login" name="password" id="password" required/>
+					<input type="submit" class="tombol_login" onClick="return validasi()" value="LOGIN">
+				</form>
+				<div class="note">
+					<h6>Information</h6>
+					<center>
+					<table class="tabel">
+						<tr>
+							<td width="20%">Pengguna</td>
+							<td width="10%">:</td>
+							<td width="30%">fadillah</td>
+						</tr>
+						<tr>
+							<td>Sandi</td>
+							<td>:</td>
+							<td>fadillah212</td>
+						</tr>
+					</table>
+					</center>
+					<br></br>
+					<h3 style="text-align: center; ">Belum punya akun? <a href="#">Daftar</a></h3>>
+					<br><br>
+				</div>
+			</div>
+			
+			<script>
+				function validasi() {
+					var user = document.getElementById("username").value;
+					var pass = document.getElementById("password").value;
+					if (user == "" && pass == "") {
+						alert('Username / Password Tidak Boleh Kosong');
+						return false;
+					}
+					else if (pass.length < 4){
+						alert('Password Kurang Dari 4');
+						return false;
+					}
+					else if (user == "fadillah" && pass == "fadillah212"){
+						alert('Anda Berhasil Login: Tuan Ahmad Asep Nurfadillah');
+						window.location = "Login.html";
+						return false;
+					}else{
+						alert("Username / Password Anda Salah, Coba Ulang Lagi");
+					}
+				}
+			</script>
+			
+		</div>
+	</body>
+</html>
